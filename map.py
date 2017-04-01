@@ -44,8 +44,9 @@ def add_building(building):
     feature = ds.read_feature(dsid, building_id)
     buildings.append(feature.json())
     make_map(buildings)
-    names = [building_name(building) for building in buildings]
-
+    name = building_name(building)
+    if not name in names:
+        names.append(building_name(building))
 def clear_map():
     global buildings, names
     buildings = []
