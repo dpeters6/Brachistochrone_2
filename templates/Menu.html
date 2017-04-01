@@ -8,36 +8,29 @@
 
 </head>
 
-    <center>
+<div class="container">
 
-    <form action="http://127.0.0.1:5000/hello/name">
-    <input type="submit" value="Classes" />
+<header>
+   <h1>UVM Class Map</h1>
+</header>
+
+<nav>
+  <ul>
+
+     <form action="http://127.0.0.1:5000/hello/name">
+    <input class='button' type="submit" value="Classes" />
     </form>
 
-    <img src="/static/images/map.png" alt="Test Image" />
+<img src="/static/images/map.png" alt="Test Image" />
 
-
-
-
-
-
-
-
-
-
-	<!-- HTML for SEARCH BAR -->
-	<div id="tfheader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="Search" class="tfbutton">
-
-		</form>
-	<div class="tfclear"></div>
-	</div>
-
-
-
-    </center>
-
+<body>
+    <h1>Enter some text</h1>
+    <h2>(it will be converted to uppercase)</h2>
+    <form action="/" method="POST">
+        <input type="text" name="text">
+        <input type="submit" name="my-form" value="Send">
+    </form>
+</body>
 
 
 </html>
