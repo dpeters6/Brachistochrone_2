@@ -19,7 +19,7 @@ building_ids = {
     # 'davis' : '16e615d9bc43cf35f627d2411079d3fd',
     # 'discovery' : '199877b08cc3de4a4ad88ba65f730371',
     'flemin' : '2e3556350cf72ea054bd354e46899318',
-    'hsrf' : '6f5e9eb85ae1129a1408d927cc2119d4'
+    'hsrf' : '6f5e9eb85ae1129a1408d927cc2119d4',
     'morril' : '310ee53ca0599174af92743ec579e94d',
     'omanex' : '21f2116702d35d8e21e706fb3dd6a311',
     'oldmil' : '20ab696c02c2341b735d6883209dead3',
