@@ -29,19 +29,7 @@ building_ids = {
     'perkins' : '586f12524384b40ad4551ad7087a62d4',
     'cook' : '5a889d124be37b8fcb5f6bc37742b644',
     'waterman' : '6edc7477a6e49a24a3aef204f22a766a',
-    'health science research facility' : '6f5e9eb85ae1129a1408d927cc2119d4',
-    # 'hills' : '974274a8548ccb0fdc63387b7075850c',
-    # 'votey' : 'a51925113cd22c47b159cbf1086a1377',
-    # 'given' : 'b27f7aa4a38a402c9b51906d1e9ca328',
-    # 'billings lecture hall' : 'bacc5d6ea8028e76a06c0a24588637b9',
-    # 'jeffords' : 'bd423d46eaa6c13ea75550119bb95f31',
-    # 'rowell' : 'ce59b608ef33234fa4305664ce1bb6be',
-    # 'bailey-howe' : 'd915d02af6efa1b771fe4596e9adcfca',
-    # 'lafayette' : 'da9b2bad978ec71be3d55c9dc932c105',
-    # 'aiken' : 'df70dfd037a92eb9f3832b19836f6bcf',
-    # 'kalkin' : 'e589b0d4663a7d9e1a99130ad7664494',
-    # 'chapel' : 'fada3735d6829c7160d7ed550db647fd',
-    # 'marsh life' : 'fd208298d8bdbc98462d875d6ca97c47'
+    'health science research facility' : '6f5e9eb85ae1129a1408d927cc2119d4'
     }
 
 def make_map(features = None):
