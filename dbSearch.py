@@ -1,7 +1,6 @@
 import os
 import requests
 import json
-from flask import Flask, render_template, request
 from mysql import connector
 
 env_var = os.environ["VCAP_SERVICES"]
@@ -32,7 +31,7 @@ def mysql_search(interm):
     """
 
     conn, cursor = get_mysql_conn()
-    cursor.execute('''SELECT bldg FROM `course_info` WHERE subj_num="{}" LIMIT 1'''.format(interm))
+    cursor.execute('''SELECT bldg FROM `course_info` WHERE subj_num="{}" LIMIT 1'''.format(interm.lower()))
     results = cursor.fetchall()
     conn.disconnect()
     try:
@@ -44,8 +43,9 @@ def mysql_search(interm):
         print("Sorry, no results found.")
         outerm = ""
     return outerm
+    # return results
 
 # if __name__ == '__main__':
-#     print(mysql_search('anfs 491'))
+#     print(mysql_search('wLit 110'))
 
 

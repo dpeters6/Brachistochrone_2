@@ -12,6 +12,8 @@ dsid = 'cj0zcvgfj03eq32sd22ojxt9f'
 buildings = []
 names = []
 
+mapbox_creds = 'pk.eyJ1IjoidXZtbWFwcyIsImEiOiJjajB5aXdlMWgwMXo2MndwZWlsejNyczV4In0.yiBuP83lhGA_nSNFmFQ-KQ'
+
 building_ids = {
     'bllngs' : '09f7bdfbd310df3f188acb4e50ce7d14',
     # 'cook' : '5a889d124be37b8fcb5f6bc37742b644',
@@ -40,6 +42,8 @@ def make_map(features = None):
 
 def add_building(building):
     '''Add a building to the map'''
+    if not building in buildings:
+        return()
     building_id = building_ids[building.lower()]
     feature = ds.read_feature(dsid, building_id)
     buildings.append(feature.json())
@@ -47,6 +51,7 @@ def add_building(building):
     name = building_name(building)
     if not name in names:
         names.append(building_name(building))
+
 def clear_map():
     global buildings, names
     buildings = []
