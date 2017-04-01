@@ -4,8 +4,11 @@
 
 # description:   Make pretty maps
 
+import os
 import mapbox as mb
-import base64
+import json
+env_var = os.getenv("VCAP_SERVICES")
+vcap = json.loads(env_var)
 
 from io import BytesIO
 

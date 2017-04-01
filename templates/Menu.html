@@ -17,17 +17,20 @@
 </header>
 
 
-
-     <!--<form action="http://127.0.0.1:5000/hello/name">-->
-    <!--<input class='button' type="submit" value="Classes" />-->
-    <!--</form>-->
-
-
-    <form action="/" method="POST">
+<!--
+     <form action="http://127.0.0.1:5000/hello/name">
+    <input class='button' type="submit" value="Classes" />
+    </form>
+-->
+      <form method="POST">
         <input class="search" type="text" name="text">
         <input class="button" type="submit" name="my-form" value="Search">
-    </form>
-
+      </form>
+  {%  if data %}
+     <h1>Output is: {{ data }}</h1>
+    {%  else  %}
+      <h1> </h1>
+    {% endif %}
 
 </div>
 <img src="data:image/png;base64,{{ result }}" alt="Test Image" />

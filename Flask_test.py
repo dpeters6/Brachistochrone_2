@@ -1,27 +1,36 @@
 
 from flask import Flask, render_template, request
 import os
+import map
+import dbSearch
 
 
 
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/',methods = ['GET', 'POST'])
 def menu():
-    return render_template('Menu.html')
-
-
+      if request.method == "POST":
+        data = request.form['text']
+        bldg = dbSearch.mysql_search(data)
+        map.add_building(bldg)
+        return render_template('Menu.html', data = bldg)
+      else:
+        return render_template('Menu.html')
 
 
 
 @app.route('/mapfunction', methods=['GET', 'POST'])
 def datainput():
     if request.method == "POST":
-        data = request.form
+        data = request.form['text']['text']
+        bldg = dbSearch.mysql_search(data)
+        map.add_building(bldg)
         return render_template('Menu.html', data = data)
     else:
         return render_template('Menu.html', data = None)
+
 
 
 

@@ -18,6 +18,7 @@ import logging
 import os
 import pandas as pd
 import requests
+import dbSearch
 from flask import Flask, render_template, request
 from mysql import connector
 from weather import get_weather_df, get_weather_plots
@@ -172,7 +173,6 @@ def show_mysql():
 @app.route('/reset', methods=['GET', 'POST'])
 def reset_table_from_html():
     if request.method == "POST":
-        reset_table('BLUEMIX')
         df = query_bluemix('BLUEMIX')
         html_table = df.to_html(classes='testclass', index=False)
         return render_template('mysql.html', tables=[html_table], titles=['test_title'])
