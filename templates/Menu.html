@@ -8,38 +8,29 @@
 
 </head>
 
-    <center>
+<div class="container">
 
-   <!-- <form action="http://127.0.0.1:5000/hello/name">
-    <input type="submit" value="Classes" /> -->
+<header>
+   <h1>UVM Class Map</h1>
+</header>
+
+<nav>
+  <ul>
+
+     <form action="http://127.0.0.1:5000/hello/name">
+    <input class='button' type="submit" value="Classes" />
     </form>
 
-    <img src="../static/images/map.png" alt="Test Image" />
+<img src="/static/images/map.png" alt="Test Image" />
 
-
-
-
-<form action="{{ url_for('datainput') }}" method="POST">
-        <input type="data" name="Data">
-        <input type="data", value="Search", class="go_button">
+<body>
+    <h1>Enter some text</h1>
+    <h2>(it will be converted to uppercase)</h2>
+    <form action="/" method="POST">
+        <input type="text" name="text">
+        <input type="submit" name="my-form" value="Send">
     </form>
-
-
-
-
-
-
-<form>
-        <input type="submit", value='datainput', class="go_button">
-    </form>
-
-
-
-
-
-
-    </center>
-
+</body>
 
 
 </html>
