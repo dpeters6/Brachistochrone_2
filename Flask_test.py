@@ -14,22 +14,24 @@ def menu():
       if request.method == "POST":
         data = request.form['text']
         bldg = dbSearch.mysql_search(data)
-        map.add_building(bldg)
-        return render_template('Menu.html', data = bldg)
+        result = map.add_building(bldg)
+        return render_template('Menu.html', data = bldg, maps = result)
       else:
-        return render_template('Menu.html')
+        bldg = dbSearch.mysql_search('wlit 118')
+        result = map.add_building(bldg)
+        return render_template('Menu.html', data = bldg, maps = result)
 
 
 
-@app.route('/mapfunction', methods=['GET', 'POST'])
-def datainput():
-    if request.method == "POST":
-        data = request.form['text']['text']
-        bldg = dbSearch.mysql_search(data)
-        map.add_building(bldg)
-        return render_template('Menu.html', data = data)
-    else:
-        return render_template('Menu.html', data = None)
+# @app.route('/mapfunction', methods=['GET', 'POST'])
+# def datainput():
+#     if request.method == "POST":
+#         data = request.form['text']['text']
+#         bldg = dbSearch.mysql_search(data)
+#         result = map.add_building(bldg)
+#         return render_template('Menu.html', data = data)
+#     else:
+#         return render_template('Menu.html', data = None)
 
 
 
