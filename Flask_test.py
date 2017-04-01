@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request
 import os
 import map
+import dbSearch
 
 
 
@@ -20,9 +21,12 @@ def menu():
 def datainput():
     if request.method == "POST":
         data = request.form
+        bldg = dbSearch.mysql_search(data)
+        map.add_building(bldg)
         return render_template('Menu.html', data = data)
     else:
         return render_template('Menu.html', data = None)
+
 
 
 
