@@ -9,3 +9,4 @@ from mysql import connector
 
 @app.route('/')
 def menu():
+    

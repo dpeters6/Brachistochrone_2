@@ -14,7 +14,14 @@
 <div class=page align="center">
   <h1>Get Weather Plots!</h1>
     <form action="{{ url_for('get_weather') }}" method="POST">
-        <input type="text" name="zipcode" class="weather_text">
+        <input type="text" name="zipcode" class="weather_text">@app.route('/menufile.html', methods=['GET', 'POST'])
+    def results():
+        g.db = connect_db()
+
+        cur = g.db.execute("SELECT * FROM all_items WHERE name = '{}'".format('Red'))
+        posts = [dict(item=row[0], name=row[1]) for row in cur.fetchall()]
+        g.db.close()
+        return render_template('menufile.html', posts=posts)
         <h2><input type="submit", value="Forecast!" class="trans_button"></h2>
 
     </form>
