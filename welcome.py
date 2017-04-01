@@ -20,7 +20,6 @@ import pandas as pd
 import requests
 from flask import Flask, render_template, request
 from mysql import connector
-
 from weather import get_weather_df, get_weather_plots
 
 app = Flask(__name__, template_folder='static')

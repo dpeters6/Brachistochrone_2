@@ -1,30 +1,32 @@
-from flask import Flask, request, render_template
-import map
+
+from flask import Flask, render_template, request
+import os
+
+
+
 
 app = Flask(__name__)
 
 @app.route('/')
-def my_form():
+def menu():
     return render_template('Menu.html')
 
-@app.route('/', methods=['POST'])
-def my_for_post():
-    text = request.form['text']
-    processed_text = text.upper()
-    return processed_text
-
-@app.route('/map/')
-def map():
-    return '''
-    <html>
-    <img src="/static/images/map.png" alt="Test Image" />
-    </html>
-    '''
-
-@app.route('/hello/<user>/')
-def hello_name(user):
-   return render_template('hello.html', name = user)
 
 
-if __name__ == '__main__':
-    app.run()
+
+
+@app.route('/mapfunction', methods=['GET', 'POST'])
+def datainput():
+    if request.method == "POST":
+        data = request.form
+        return render_template('Menu.html', data = data)
+    else:
+        return render_template('Menu.html', data = None)
+
+
+
+
+port = os.getenv('PORT', '5001')
+if __name__ == "__main__":
+    app.debug = True
+    app.run(host='0.0.0.0', port=int(port), use_reloader=False)
