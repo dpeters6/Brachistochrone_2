@@ -55,9 +55,3 @@ def add_building(building):
     buildings.append(feature.json())
     make_map(buildings)
 
-make_map()
-
-b = "BEARS"
-while b != "":
-  b = input("Which building?\n")
-  add_building(b)
