@@ -10,29 +10,31 @@
 
     <center>
 
-    <form action="http://127.0.0.1:5000/hello/name">
-    <input type="submit" value="Classes" />
+   <!-- <form action="http://127.0.0.1:5000/hello/name">
+    <input type="submit" value="Classes" /> -->
     </form>
 
-    <img src="/static/images/map.png" alt="Test Image" />
+    <img src="../static/images/map.png" alt="Test Image" />
+
+
+
+
+<form action="{{ url_for('datainput') }}" method="POST">
+        <input type="data" name="Data">
+        <input type="data", value="Search", class="go_button">
+    </form>
 
 
 
 
 
 
+<form>
+        <input type="submit", value='datainput', class="go_button">
+    </form>
 
 
 
-
-	<!-- HTML for SEARCH BAR -->
-	<div id="tfheader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="Search" class="tfbutton">
-
-		</form>
-	<div class="tfclear"></div>
-	</div>
 
 
 
