@@ -18,7 +18,7 @@ def get_mysql_conn():
     cursor.execute("USE {}".format(SCHEMA))
     return conn, cursor
 
-def mysql_search(interm, outerm):
+def mysql_search(interm):
     """
     ins === a string, can be a fileld of 
             subject + course number (WORKING NOW!)
@@ -33,7 +33,8 @@ def mysql_search(interm, outerm):
     conn, cursor = get_mysql_conn()
     cursor.execute('''SELECT bldg FROM `course_info` WHERE subj_num="{}" '''.format(interm))
     results = cursor.fetchall()
+    outerm = results["bldg"]
     conn.disconnect()
-    return results["bldg"]
+    return outerm
 
 
