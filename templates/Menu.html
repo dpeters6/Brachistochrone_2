@@ -4,11 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheets/style.css') }}">
+
 </head>
 
-<form action="http://127.0.0.1:5000/hello/name">
-<input type="submit" value="Classes" />
-</form>
+<div class="container">
+
+<header>
+   <h1>UVM Class Map</h1>
+</header>
+
+<nav>
+  <ul>
+
+     <form action="http://127.0.0.1:5000/hello/name">
+    <input class='button' type="submit" value="Classes" />
+    </form>
 
 <img src="/static/images/map.png" alt="Test Image" />
 
