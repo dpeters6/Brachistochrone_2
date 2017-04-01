@@ -43,3 +43,6 @@ def add_building(building):
     buildings.append(feature.json())
     make_map(buildings)
 
+def clear_map():
+    buildings = []
+    make_map()
