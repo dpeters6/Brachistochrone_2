@@ -178,7 +178,9 @@ def reset_table_from_html():
         html_table = df.to_html(classes='testclass', index=False)
         return render_template('mysql.html', tables=[html_table], titles=['test_title'])
 
-
+@app.route("testing")
+def showmenu():
+    return render_template('menufile.html')
 @app.route('/weather', methods=['GET', 'POST'])
 def get_weather():
     if request.method == 'POST':
