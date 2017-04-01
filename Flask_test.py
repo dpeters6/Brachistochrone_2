@@ -1,10 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, request, render_template
+import map
 
 app = Flask(__name__)
 
 @app.route('/')
-def menu():
+def my_form():
     return render_template('Menu.html')
+
+@app.route('/', methods=['POST'])
+def my_for_post():
+    text = request.form['text']
+    processed_text = text.upper()
+    return processed_text
 
 @app.route('/map/')
 def map():

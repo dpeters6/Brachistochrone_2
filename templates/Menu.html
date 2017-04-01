@@ -4,40 +4,22 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheets/style.css') }}">
-
 </head>
 
-    <center>
+<form action="http://127.0.0.1:5000/hello/name">
+<input type="submit" value="Classes" />
+</form>
 
-    <form action="http://127.0.0.1:5000/hello/name">
-    <input type="submit" value="Classes" />
+<img src="/static/images/map.png" alt="Test Image" />
+
+<body>
+    <h1>Enter some text</h1>
+    <h2>(it will be converted to uppercase)</h2>
+    <form action="/" method="POST">
+        <input type="text" name="text">
+        <input type="submit" name="my-form" value="Send">
     </form>
-
-    <img src="/static/images/map.png" alt="Test Image" />
-
-
-
-
-
-
-
-
-
-
-	<!-- HTML for SEARCH BAR -->
-	<div id="tfheader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="Search" class="tfbutton">
-
-		</form>
-	<div class="tfclear"></div>
-	</div>
-
-
-
-    </center>
-
+</body>
 
 
 </html>
