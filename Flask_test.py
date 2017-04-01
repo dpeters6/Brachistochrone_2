@@ -3,10 +3,14 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def menu():
+    return render_template('Menu.html')
+
+@app.route('/map/')
+def map():
     return '''
     <html>
-    <img src="/static/images/Capture.PNG" alt="Test Image" />
+    <img src="/static/images/map.png" alt="Test Image" />
     </html>
     '''
 
