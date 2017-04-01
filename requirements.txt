@@ -15,5 +15,5 @@ matplotlib
 ipython
 jupyter
 sqlalchemy
-mysql-connector
+#mysql-connector
 requests
