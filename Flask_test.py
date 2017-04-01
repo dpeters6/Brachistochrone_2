@@ -6,9 +6,10 @@ app = Flask(__name__)
 def hello_world():
     return '''
     <html>
-    <img src="/static/images/map.PNG" alt="Test Image" />
+    <img src="/static/images/map.png" alt="Test Image" />
     </html>
     '''
+    return render_template('Menu.html')
 
 @app.route('/hello/<user>/')
 def hello_name(user):
