@@ -4,7 +4,13 @@
 
 # description:   Make pretty maps
 
+import os
 import mapbox as mb
+import json
+env_var = os.getenv("VCAP_SERVICES")
+vcap = json.loads(env_var)
+
+#mapbox_creds = vcap["user-provided"]["credentials"]["token"]
 
 static = mb.Static()
 ds = mb.Datasets()
