@@ -7,25 +7,22 @@
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheets/style.css') }}">
 
 </head>
+<body>
 
-    <center>
+<div class="container">
 
-    <form action="http://127.0.0.1:5000/hello/name">
-    <input type="submit" value="Classes" />
+<header>
+   <h1>UVM Class Map</h1>
+</header>
+
+<nav>
+  <ul>
+
+     <form action="http://127.0.0.1:5000/hello/name">
+    <input class='button' type="submit" value="Classes" />
     </form>
 
-    <img src="/static/images/map.png" alt="Test Image" />
-
-
-
-
-
-
-
-
-
-
-	<!-- HTML for SEARCH BAR -->
+      	<!-- HTML for SEARCH BAR -->
 	<div id="tfheader">
 		<form id="tfnewsearch" method="get" action="http://www.google.com">
 		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="Search" class="tfbutton">
@@ -34,9 +31,27 @@
 	<div class="tfclear"></div>
 	</div>
 
+  </ul>
+
+</nav>
+
+<img src="/static/images/map.png" alt="Test Image" />
+
+<footer></footer>
+
+</div>
+
+</body>
 
 
-    </center>
+
+
+
+
+
+
+
+
 
 
 
