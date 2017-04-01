@@ -5,6 +5,9 @@
 # description:   Make pretty maps
 
 import mapbox as mb
+import base64
+
+from io import BytesIO
 
 static = mb.Static()
 ds = mb.Datasets()
@@ -37,7 +40,11 @@ building_ids = {
 
 def make_map(features = None):
     response = static.image('mapbox.pencil', lon=-73.196091, lat=44.476947, z=16, features = features)
-    return(response.content)
+    new_map = BytesIO()
+    new_map.write(response.content)
+    new_map.seek(0)
+    new_map = base64.encodebytes(new_map.read()).decode('ascii')
+    return(new_map)
 
 def add_building(building):
     '''Add a building to the map'''
