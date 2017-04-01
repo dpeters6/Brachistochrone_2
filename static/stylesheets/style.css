@@ -182,8 +182,16 @@ pre {
 }
 
 div.container {
+	text-align: center;
+	position: relative;
     width: 100%;
     border: 1px solid gray;
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 40%;
 }
 
 header, footer {
@@ -195,8 +203,8 @@ header, footer {
 }
 
 nav {
-    float: left;
-    max-width: 160px;
+    float: none;
+	align: center;
     margin: 0;
     padding: 1em;
 }
@@ -211,6 +219,7 @@ nav ul a {
 }
 
 article {
+	align: center;
     margin-left: 170px;
     border-left: 1px solid gray;
     padding: 1em;
