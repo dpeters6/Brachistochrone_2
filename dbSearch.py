@@ -1,5 +1,6 @@
 import os
 import requests
+import json
 from flask import Flask, render_template, request
 from mysql import connector
 
@@ -20,21 +21,31 @@ def get_mysql_conn():
 
 def mysql_search(interm):
     """
-    ins === a string, can be a fileld of 
+    inerm === a string, can be a fileld of 
             subject + course number (WORKING NOW!)
             course title
             crn number
             building full name
             building abbreviation
     infield === choose filed ""
-    outs === output, string of lowercase bldg abbreviation
+    outerm === output, string of lowercase bldg abbreviation
     """
 
     conn, cursor = get_mysql_conn()
-    cursor.execute('''SELECT bldg FROM `course_info` WHERE subj_num="{}" '''.format(interm))
+    cursor.execute('''SELECT bldg FROM `course_info` WHERE subj_num="{}" LIMIT 1'''.format(interm))
     results = cursor.fetchall()
-    outerm = results["bldg"]
     conn.disconnect()
+    try:
+        outerm = results[0][0]
+        if outerm=='nan':
+            print("Sorry, no results found.")
+            outerm = ""
+    except IndexError:
+        print("Sorry, no results found.")
+        outerm = ""
     return outerm
+
+# if __name__ == '__main__':
+#     print(mysql_search('anfs 491'))
 
 
