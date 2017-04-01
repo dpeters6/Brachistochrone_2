@@ -12,6 +12,8 @@ dsid = 'cj0zcvgfj03eq32sd22ojxt9f'
 buildings = []
 names = []
 
+mapbox_creds = 'pk.eyJ1IjoidXZtbWFwcyIsImEiOiJjajB5aXdlMWgwMXo2MndwZWlsejNyczV4In0.yiBuP83lhGA_nSNFmFQ-KQ'
+
 building_ids = {
     'bllngs' : '09f7bdfbd310df3f188acb4e50ce7d14',
     # 'cook' : '5a889d124be37b8fcb5f6bc37742b644',
