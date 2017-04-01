@@ -37,8 +37,7 @@ building_ids = {
 
 def make_map(features = None):
     response = static.image('mapbox.pencil', lon=-73.196091, lat=44.476947, z=16, features = features)
-    with open('static/images/map.png', 'wb') as output:
-        _ = output.write(response.content)
+    return(response.content)
 
 def add_building(building):
     '''Add a building to the map'''
